@@ -12,6 +12,7 @@ Se l'utente ha indovinato l'esito (pari o dispari) della somma ha vinto, altrime
 const evenEl = document.getElementById("even");
 const oddEl = document.getElementById("odd");
 
+// se l'utente sceglie pari
 evenEl.addEventListener("click",
     function () {
 
@@ -30,11 +31,52 @@ evenEl.addEventListener("click",
         let score = sum(userNumber, cpuNumber);
         console.log(score);
 
-        // stabilisco se la somma è pari o dispari
-        isEvenOrOdd(score);
+        // stabilisco se la somma è pari o dispari e la memorizzo in una variabile
+        let result = isEvenOrOdd(score);
 
         console.log(isEvenOrOdd(score));
 
+        // decreto vincita in caso di numero pari
+        if (result == "even") {
+            console.log("Pari! Hai vinto!");
+        }
+        else {
+            console.log("Hai perso!");
+        }
+
+    }
+)
+
+// se l'utente sceglie dispari
+oddEl.addEventListener("click",
+    function () {
+
+        // chiedo all'utente un numero da 1 a 5
+        const userNumber = Number(prompt("Inserisci un numero da 1 a 5"));
+
+        // numero scelto
+        console.log(userNumber);
+
+        // numero scelto dal computer
+        cpuNumber = randomNumber();
+        console.log(cpuNumber);
+
+
+        // sommo i due numeri e li memorizzo in una variabile
+        let score = sum(userNumber, cpuNumber);
+        console.log(score);
+
+        // stabilisco se la somma è pari o dispari e la memorizzo in una variabile
+        let result = isEvenOrOdd(score);
+
+        console.log(isEvenOrOdd(score));
+
+        // decreto vincita in caso di numero dispari
+        if (result == "odd") {
+            console.log("Dispari! Hai vinto!");
+        } else {
+            console.log("Hai perso!");
+        }
 
     }
 )
