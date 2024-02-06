@@ -15,17 +15,22 @@ const userWord = prompt("Inserisci una parola");
 
 // funzione per capire se una parola è palindroma
 // function isPalindrome(word) {
-let isPalindrome = false;
+let isPalindrome = true;
 
 for (let i = 0; i < userWord.length; i++) {
-    if (userWord[i] == userWord[userWord.length - i - 1]) {
-        isPalindrome = true;
-    } else {
+    if (userWord[i] != userWord[userWord.length - i - 1]) {
         isPalindrome = false;
     }
 }
 
+for (let i = userWord.length - 1; i > -1; i--) {
+    console.log(userWord[i]);
+}
+
 if (isPalindrome) {
+    console.log(userWord);
+
+
     console.log("La parola è palindroma")
 } else {
     console.log("La parola non è palindroma");
